@@ -50,7 +50,7 @@ function LoginForm()
     {
         e.preventDefault();
         let response = await callAPI({url:"http://localhost:8000/api/auth/login/", method:"POST", body:{username:e.target.username.value, password:e.target.password.value}});
-       
+        
         if (response?.data?.access)
             {
                 localStorage.setItem("token", response.data.access);
